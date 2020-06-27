@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pen.title %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @pen.colour %>
+</p>
+
+<%= link_to 'Edit', edit_pen_path(@pen) %> |
+<%= link_to 'Back', pens_path %>

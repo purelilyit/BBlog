@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pens</h1>
+
+<hr>
+
+  <div>
+    <% @pens.each do |pen| %>
+        <div>
+                      <p><%= pen.title %></p>
+                      <p><%= pen.colour %></p>
+                      <p><%= link_to 'Show', pen %></p>
+            <p><%= link_to 'Edit', edit_pen_path(pen) %></p>
+            <p><%= link_to 'Delete', pen, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+    <% end %>
+  </div>
+
+<br>
+
+<%= link_to 'Create a New Pen', new_pen_path %>
