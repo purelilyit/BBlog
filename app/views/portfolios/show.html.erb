@@ -1,0 +1,9 @@
+<h2>Show Portfolio item</h2>
+
+<p id="notice"><%= notice %></p>
+
+<p><%= image_tag @portfolio_item.main_image %></p>
+<p><strong><%= @portfolio_item.title %></strong></p>
+<p><%= @portfolio_item.body %></p>
+
+<%= link_to 'Back', portfolios_path %>
