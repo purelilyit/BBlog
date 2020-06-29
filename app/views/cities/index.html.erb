@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cities</h1>
+
+<hr>
+
+  <div>
+    <% @cities.each do |city| %>
+        <div>
+                      <p><%= city.name %></p>
+                      <p><%= city.string %></p>
+                      <p><%= city.postcode %></p>
+                      <p><%= city.string %></p>
+                      <p><%= link_to 'Show', city %></p>
+            <p><%= link_to 'Edit', edit_city_path(city) %></p>
+            <p><%= link_to 'Delete', city, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+    <% end %>
+  </div>
+
+<br>
+
+<%= link_to 'Create a New City', new_city_path %>
