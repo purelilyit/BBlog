@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_165203) do
+ActiveRecord::Schema.define(version: 2020_07_03_102344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 2020_06_29_165203) do
     t.text "thumb_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "badge"
   end
 
+  create_table "technologies", force: :cascade do |t|
+    t.string "name"
+    t.bigint "portfolio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id"
+  end
+
+  add_foreign_key "technologies", "portfolios"
 end
