@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+  # devise_for :users
   resources :cities
   resources :pens
   resources :portfolios
@@ -13,4 +15,6 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
+
+  root to: 'portfolios#index'
 end
