@@ -6,9 +6,19 @@
 <p><strong><%= @portfolio_item.title %></strong></p>
 <p><%= @portfolio_item.body %></p>
 <br>
-<h2> Technologies used </h2>
+<h2> Technologies used </h2> <hr>
 <% @portfolio_item.technologies.each do |t| %>
 	<p><%= t.name %></p>
 <% end %>
 
-<%= link_to 'Back', portfolios_path %>
+<%= link_to 'Back', portfolios_path %><br><br>
+
+<%= params.inspect%><br>
+
+<%= params[:controller]%><br>
+
+<%= params[:action]%><br>
+
+<%= params[:id]%> <br>
+
+<%= session.inspect %>
