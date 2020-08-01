@@ -4,16 +4,4 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'Create a New Portfolio item', new_portfolio_path %>
 
-<% @portfolio_items.each do |portfolio_item| %>
-  	<p><%= portfolio_item.title %></p>
-  	<p><%= portfolio_item.subtitle %></p>
-  	<p><%= portfolio_item.body %></p>
-  	<!-- <p>portfolio.item.main_image</p>       ***not included as it is not needed on the home page for now-->
-  	<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%>
-    <p>
-      <%= link_to 'Edit Item', edit_portfolio_path(portfolio_item.id) %>
-      <%= link_to 'Show Item', portfolio_path(portfolio_item.id) %>
-      <%= link_to 'Delete Item', portfolio_item, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <hr>
-    </p>
-<% end %>
+<%= render partial: 'portfolio_item', collection: @portfolio_items %>
