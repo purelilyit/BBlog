@@ -14,18 +14,27 @@
 
   <body>
 
-    <%= source_helper %>
+    <div class="site-wrapper">
 
-    <%= render '/shared/nav' %>
+      <div class="site-wrapper-inner">
 
-    <hr>
+        <div class="cover-container">
 
-    <%= login_helper %>
+            <%= source_helper %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+            <%= render '/shared/application_nav' %>
 
-    <%= yield %>
+            <hr>
 
+            <%= login_helper %>
+
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+
+            <%= yield %>
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>
