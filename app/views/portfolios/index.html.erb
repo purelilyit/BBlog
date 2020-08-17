@@ -1,7 +1,7 @@
 <h3>Hi,  <%= current_user.first_name %></h3>
-
+<!-- <p id="notice"><%= notice %></p> -->
 <h1> Portfolio Items </h1>
-<p id="notice"><%= notice %></p>
+
 <%= link_to 'Create a New Portfolio item', new_portfolio_path %>
 
 <%= render partial: 'portfolio_item', collection: @portfolio_items %>
