@@ -58,7 +58,7 @@ body {
 
 /* Padding for spacing */
 .inner {
-  padding: 2rem;
+  // padding: 32px;
 }
 
 
@@ -140,7 +140,7 @@ body {
 }
 
 .card-block{
-  margin-left: 10px;
+  margin: 0 10px 0 10px;
 }
 
 .card-block {
@@ -148,9 +148,25 @@ body {
     text-align: left;
 }
 
+.auth-links{
+  margin-bottom: 10px;
+}
+
 .auth-links a{
   color: black;
 }
+
+.login{
+  margin-bottom: 30px;
+}
+
+.login > .card{
+  width: 300px;
+  /*to centre it*/
+  margin: 0 auto;
+  float: none;
+}
+
 
 
 /*
