@@ -15,46 +15,30 @@
   </head>
 
   <body>
+    <!-- Start of animated nav-->
     <%= render 'shared/portfolio_nav' %>
+    <!-- End of animated nav-->
+
 
     <!-- Greeting and navbar from partial -->
     <h3>Hi,  <%= current_user.first_name %></h3>
     <!-- <p id="notice"><%= notice %></p> -->
     <%= link_to 'Create a New Portfolio item', new_portfolio_path %>
-
     <%= render '/shared/application_nav' %>
-    <!-- Greeting and navbar from partial -->
+    <!-- End of Greeting and navbar from partial -->
+
 
     <!-- Start of jumbotron message -->
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Portfolio Items</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-        <p>
-          <%= link_to 'Find out More', pages_contact_path, class: 'btn btn-primary' %>
-          <%= link_to 'My Blog', blogs_path, class: 'btn btn-secondary' %>
-        </p>
-      </div>
-    </section>
+    <%= render '/shared/portfolio_jumbotron_msg'%>
     <!-- End of jumbotron message -->
 
     <!-- Start of Album/portfolio display here -->
-
     <%= yield %>
-
     <!-- End of Album/portfolio display here -->
 
-    <!-- Start of footer -->
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
-      </div>
-    </footer>
 
+    <!-- Start of footer -->
+    <%= render '/shared/portfolio_footer'%>
     <!-- End of footer -->
   </body>
 </html>
