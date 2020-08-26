@@ -1,24 +1,27 @@
-<h2>Show Portfolio item</h2>
+<div class="container">
+   <div class="row">
+	   	<div class="col-md-7">
+			   <%= link_to 'Back', portfolios_path %><br><br>
+		     <p><%= image_tag @portfolio_item.main_image %></p>
+		  </div>
+	   	<div class="col-md-5">
+			    <p><strong><%= @portfolio_item.title %></strong></p>
+					<hr>
+	        <p><%= @portfolio_item.body %></p>
+	        <br>
+	        <h2> Technologies used </h2>
+	        <% @portfolio_item.technologies.each do |t| %>
+	        		<p><%= t.name %></p>
+	        <% end %>
+		  </div>
+   </div>
+</div>
+<%= params.inspect%><br> <hr>
 
-<p id="notice"><%= notice %></p>
+<%= params[:controller]%><br> <hr>
 
-<p><%= image_tag @portfolio_item.main_image %></p>
-<p><strong><%= @portfolio_item.title %></strong></p>
-<p><%= @portfolio_item.body %></p>
-<br>
-<h2> Technologies used </h2> <hr>
-<% @portfolio_item.technologies.each do |t| %>
-	<p><%= t.name %></p>
-<% end %>
+<%= params[:action]%><br><hr>
 
-<%= link_to 'Back', portfolios_path %><br><br>
-
-<%= params.inspect%><br>
-
-<%= params[:controller]%><br>
-
-<%= params[:action]%><br>
-
-<%= params[:id]%> <br>
+<%= params[:id]%> <br><hr>
 
 <%= session.inspect %>
