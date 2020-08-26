@@ -54,13 +54,13 @@ layout "portfolio"
     end
   end
 
-  def private portfolio_params
-        params.require(:portfolio).permit(
-                       :title,
-                       :subtitle,
-                       :body,
-                       technologies_attributes: [:name]
-                      )
+  def portfolio_params
+      params.require(:portfolio).permit(
+                     :title,
+                     :subtitle,
+                     :body,
+                     technologies_attributes: [:name]
+                    )
   end
 
 end
