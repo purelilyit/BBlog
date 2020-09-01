@@ -10,10 +10,22 @@ module ApplicationHelper
     end
   end
 
-    def source_helper
-      if session[:source]
-           greeting = "Thanks for visiting me from #{session[:source]}"
-   	       content_tag(:p, greeting, class: "source-greeting")
-        end
+  def source_helper
+    if session[:source]
+         greeting = "Thanks for visiting me from #{session[:source]}"
+ 	       content_tag(:p, greeting, class: "source-greeting")
     end
+  end
+
+  def nav_helper style, tag_type
+nav_links = <<NAV
+<#{tag_type}><a href="#{root_path}" class="#{style}">Home</a></#{tag_type}>
+<#{tag_type}><a href="#{pages_contact_path}" class="#{style}">About Me</a></#{tag_type}>
+<#{tag_type}><a href="#{blogs_path}" class="#{style}">Blogs</a></#{tag_type}>
+<#{tag_type}><a href="#{portfolios_path}" class="#{style}">Portfolio</a></#{tag_type}>
+<#{tag_type}><a href="#{pages_contact_path}" class="#{style}">Contact</a></#{tag_type}>
+NAV
+  nav_links.html_safe
+ end
+
 end
