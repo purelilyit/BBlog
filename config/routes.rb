@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   # devise_for :users
   resources :cities
   resources :pens
-  resources :portfolios
   get 'pages/home'
   get 'pages/about'
   get 'pages/contact'
   resources :blogs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :portfolios do
+    put :sort, on: :collection
+  end
 
   resources :blogs do
     member do
