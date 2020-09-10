@@ -7,6 +7,7 @@ some_function =->
   # alert("Hey there")
   $('.container').toggle()
 
+
 $ ->
   $('#myButton').click ->
     some_function()
