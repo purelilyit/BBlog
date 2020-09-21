@@ -18,15 +18,25 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
-                <%= source_helper %>
-                <%= render '/shared/application_nav' %>
+            <%= video_tag(
+                'intro_to_ruby.mp4',
+                class: 'background',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                poster: 'coloured_hard_drive.jpg'
+              )
+            %>
 
-                <!-- <p class="notice"><%= notice %></p>
-                <p class="alert"><%= alert %></p> -->
+            <%= source_helper %>
+            <%= render '/shared/application_nav' %>
 
-                <%= yield %>
+            <!-- <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p> -->
 
-                <%= render '/shared/application_footer' %>
+            <%= yield %>
+
+            <%= render '/shared/application_footer' %>
         </div>
       </div>
     </div>
