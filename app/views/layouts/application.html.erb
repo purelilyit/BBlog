@@ -14,24 +14,19 @@
 
   <body>
 
-    <div class="site-wrapper">
-
+    <div class="site-wrapper background">
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
 
-            <%= source_helper %>
+                <%= source_helper %>
+                <%= render '/shared/application_nav' %>
 
-            <%= render '/shared/application_nav' %>
+                <!-- <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p> -->
 
-            <br/><br/><br/><br/>
+                <%= yield %>
 
-            <!-- <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p> -->
-
-            <%= yield %>
-
-            <%= render '/shared/application_footer' %>
+                <%= render '/shared/application_footer' %>
         </div>
       </div>
     </div>
