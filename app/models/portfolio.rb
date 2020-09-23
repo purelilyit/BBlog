@@ -1,11 +1,15 @@
 class Portfolio < ApplicationRecord
   has_many :technologies
-  include Placeholder
 
   accepts_nested_attributes_for :technologies,
                                   reject_if: lambda {  |attrs| attrs['name'].blank? }
 
   after_initialize :set_defaults
+
+  include Placeholder
+
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
 
   def set_defaults
     self.main_image ||= Placeholder.image_generator(height: '600',width: '400')
