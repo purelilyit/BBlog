@@ -1,0 +1,27 @@
+
+Delete 2nd row
+
+<span><%= link_to portfolio_item.title, portfolio_path(portfolio_item) if logged_in?(:site_admin) %></span>
+
+
+
+_portfolio_item.html.erb
+<div class="card" data-id="<%= portfolio_item.id %>">
+   <%= image_tag portfolio_img(portfolio_item.thumb_image, 'thumb') %>
+
+
+   portfolios_helper
+
+   def portfolio_img img, type
+     if img.model.main_image? || img.model.thumb_image?
+
+
+
+     _portfolio_item
+
+     <div class="card" data-id="<%= portfolio_item.id %>">
+       <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?%>
+
+
+       <%= image_tag portfolio_item.thumb_image_url unless portfolio_item.thumb_image_url.nil?%>
+       <%= image_tag portfolio_img(portfolio_item.thumb_image, 'thumb') %>
